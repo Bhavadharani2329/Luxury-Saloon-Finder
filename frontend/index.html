@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover and book Bangalore's most exclusive premium luxury salons. Experience beauty, elevated with Bee Elite.">
+    <title>Bee — Beauty, Elevated. | Premium Salon Discovery & Booking Bangalore</title>
+    
+    <!-- Premium Fonts and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================================================
+       1. Global Luxury Navigation Bar
+       ======================================================================== -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="brand-logo">Bee</a>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#listings" class="nav-link">Explore Salons</a></li>
+                <li><a href="#elite" class="nav-link">Bee Elite</a></li>
+                <li><a href="#about" class="nav-link">Our Story</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Luxury Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#dashboard" class="wishlist-indicator">
+                    <i class="far fa-heart"></i>
+                    <span class="wishlist-count" id="nav-wishlist-count">0</span>
+                </a>
+                <div id="nav-auth-container" style="display: flex; align-items: center; gap: 0.8rem;"></div>
+                <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================================================
+       2. Screen / View Containers (SPA Routing Panes)
+       ======================================================================== -->
+    <main>
+        
+        <!-- ==========================================
+           A. HOMEPAGE VIEW
+           ========================================== -->
+        <div id="home-page" class="view-pane animate-fade">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-bg-slider">
+                    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1600&q=80');"></div>
+                    <div class="hero-3d-container">
+                        <!-- Scissors Element -->
+                        <div class="bg-3d-element-wrap scissor-wrap" data-speed="0.05">
+                            <svg class="bg-3d-element scissor-svg" viewBox="0 0 100 100" fill="none">
+                                <defs>
+                                    <linearGradient id="gold-grad-scissor" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#F3E5AB" />
+                                        <stop offset="50%" stop-color="#D4AF37" />
+                                        <stop offset="100%" stop-color="#AA7C11" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 35 68 C 25 70, 20 80, 25 90 C 30 98, 42 98, 45 88 C 47 80, 42 70, 35 68 Z" stroke="url(#gold-grad-scissor)" stroke-width="1.5" />
+                                <path d="M 65 68 C 75 70, 80 80, 75 90 C 70 98, 58 98, 55 88 C 53 80, 58 70, 65 68 Z" stroke="url(#gold-grad-scissor)" stroke-width="1.5" />
+                                <path d="M 38 68 L 50 50 L 49 15 Q 49.5 14 50 15 L 53 50 Z" stroke="url(#gold-grad-scissor)" stroke-width="1.5" />
+                                <path d="M 62 68 L 50 50 L 51 15 Q 50.5 14 50 15 L 47 50 Z" stroke="url(#gold-grad-scissor)" stroke-width="1.5" />
+                                <circle cx="50" cy="50" r="2.5" fill="url(#gold-grad-scissor)" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Perfume Bottle Element -->
+                        <div class="bg-3d-element-wrap bottle-wrap" data-speed="0.04">
+                            <svg class="bg-3d-element bottle-svg" viewBox="0 0 100 100" fill="none">
+                                <defs>
+                                    <linearGradient id="gold-grad-bottle" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#F5F5F0" stop-opacity="0.2" />
+                                        <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.8" />
+                                        <stop offset="100%" stop-color="#AA7C11" stop-opacity="0.3" />
+                                    </linearGradient>
+                                    <linearGradient id="gold-grad-bottle-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#F3E5AB" />
+                                        <stop offset="100%" stop-color="#AA7C11" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 30 35 L 70 35 C 75 35, 75 40, 75 42 L 75 85 C 75 90, 70 92, 65 92 L 35 92 C 30 92, 25 90, 25 85 L 25 42 C 25 40, 25 35, 30 35 Z" fill="url(#gold-grad-bottle)" stroke="url(#gold-grad-bottle-stroke)" stroke-width="1.5" />
+                                <path d="M 44 35 L 44 26 L 56 26 L 56 35" stroke="url(#gold-grad-bottle-stroke)" stroke-width="1.5" />
+                                <rect x="40" y="14" width="20" height="12" rx="2" fill="url(#gold-grad-bottle)" stroke="url(#gold-grad-bottle-stroke)" stroke-width="1.5" />
+                                <rect x="33" y="45" width="34" height="38" rx="4" stroke="url(#gold-grad-bottle-stroke)" stroke-width="1" stroke-dasharray="3, 3" opacity="0.4" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Beauty Mirror Element -->
+                        <div class="bg-3d-element-wrap mirror-wrap" data-speed="0.02">
+                            <svg class="bg-3d-element mirror-svg" viewBox="0 0 100 100" fill="none">
+                                <defs>
+                                    <linearGradient id="gold-grad-mirror" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#D4AF37" />
+                                        <stop offset="100%" stop-color="#5C3D2E" />
+                                    </linearGradient>
+                                    <linearGradient id="glass-glare" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+                                        <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.05" />
+                                        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="50" cy="45" r="30" stroke="url(#gold-grad-mirror)" stroke-width="1.5" />
+                                <circle cx="50" cy="45" r="29" fill="url(#glass-glare)" />
+                                <path d="M 35 88 L 65 88 M 50 75 L 50 88" stroke="url(#gold-grad-mirror)" stroke-width="2" stroke-linecap="round" />
+                                <path d="M 20 45 L 18 45 M 80 45 L 82 45" stroke="url(#gold-grad-mirror)" stroke-width="2" />
+                                <path d="M 20 45 C 20 75, 80 75, 80 45" stroke="url(#gold-grad-mirror)" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Makeup Brush Element -->
+                        <div class="bg-3d-element-wrap brush-wrap" data-speed="0.03">
+                            <svg class="bg-3d-element brush-svg" viewBox="0 0 100 100" fill="none">
+                                <defs>
+                                    <linearGradient id="gold-grad-brush" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#F3E5AB" />
+                                        <stop offset="100%" stop-color="#5C3D2E" />
+                                    </linearGradient>
+                                    <linearGradient id="bristle-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+                                        <stop offset="0%" stop-color="#2C1810" stop-opacity="0.8" />
+                                        <stop offset="70%" stop-color="#AA7C11" stop-opacity="0.5" />
+                                        <stop offset="100%" stop-color="#F3E5AB" stop-opacity="0.9" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 50 90 L 50 45" stroke="url(#gold-grad-brush)" stroke-width="3" stroke-linecap="round" />
+                                <rect x="47" y="32" width="6" height="13" rx="1" fill="url(#gold-grad-brush)" />
+                                <path d="M 47 32 C 45 25, 42 12, 50 8 C 58 12, 55 25, 53 32 Z" fill="url(#bristle-grad)" stroke="url(#gold-grad-brush)" stroke-width="1" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Wave Ribbons -->
+                        <div class="bg-3d-element-wrap wave-wrap-1" data-speed="0.01">
+                            <svg class="bg-3d-element wave-svg" viewBox="0 0 200 100" fill="none">
+                                <defs>
+                                    <linearGradient id="gold-grad-wave-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#AA7C11" stop-opacity="0" />
+                                        <stop offset="50%" stop-color="#D4AF37" stop-opacity="0.15" />
+                                        <stop offset="100%" stop-color="#F3E5AB" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 0 50 C 50 20, 80 80, 120 40 C 150 10, 170 60, 200 30" stroke="url(#gold-grad-wave-1)" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="bg-3d-element-wrap wave-wrap-2" data-speed="0.015">
+                            <svg class="bg-3d-element wave-svg" viewBox="0 0 200 100" fill="none">
+                                <defs>
+                                    <linearGradient id="gold-grad-wave-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#F3E5AB" stop-opacity="0" />
+                                        <stop offset="50%" stop-color="#96721A" stop-opacity="0.1" />
+                                        <stop offset="100%" stop-color="#AA7C11" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M 0 55 C 48 27, 78 83, 118 45 C 148 17, 168 63, 200 35" stroke="url(#gold-grad-wave-2)" stroke-width="1" stroke-dasharray="2, 6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+
+                        <!-- 3D Gold Dust Particles -->
+                        <div class="bg-3d-dust-particles">
+                            <div class="dust-particle dp-1"></div>
+                            <div class="dust-particle dp-2"></div>
+                            <div class="dust-particle dp-3"></div>
+                            <div class="dust-particle dp-4"></div>
+                            <div class="dust-particle dp-5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-overlay"></div>
+                
+                <div class="hero-content container">
+                    <div class="hero-badge glass">
+                        <i class="fas fa-gem text-gold"></i>
+                        <span class="text-gold">Beauty, Elevated.</span>
+                    </div>
+                    <h1 class="hero-title text-gradient-gold">Bangalore Luxury Salon Finder</h1>
+                    <p class="hero-subtitle">Discover, compare and book Bangalore's most exclusive luxury salons and beauty experiences.</p>
+                    
+                    <!-- Search Bar Panel -->
+                    <div class="smart-search-wrapper glass">
+                        <form class="smart-search" onsubmit="handleHeroSearch(event)">
+                            <div class="search-field">
+                                <label for="search-location">Location</label>
+                                <select id="search-location">
+                                    <option value="all">Any Neighborhood</option>
+                                    <option value="Lavelle Road">Lavelle Road</option>
+                                    <option value="Koramangala">Koramangala</option>
+                                    <option value="Indiranagar">Indiranagar</option>
+                                    <option value="Sadashivanagar">Sadashivanagar</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <label for="search-service">Service</label>
+                                <select id="search-service">
+                                    <option value="all">Any Category</option>
+                                    <option value="Hair">Hair Styling</option>
+                                    <option value="Spa">Luxury Spa</option>
+                                    <option value="Skin">Skincare Therapy</option>
+                                    <option value="Nails">Nail Studio</option>
+                                    <option value="Makeup">Makeup Art</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <label for="search-price">Price Range</label>
+                                <select id="search-price">
+                                    <option value="all">All Budgets</option>
+                                    <option value="1">Under ₹2,000</option>
+                                    <option value="2">₹2,000 - ₹5,000</option>
+                                    <option value="3">₹5,000 - ₹10,000</option>
+                                    <option value="4">₹10,000+</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-search">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#listings" class="btn btn-primary">Explore Salons</a>
+                        <a href="#elite" class="btn btn-secondary">Join Bee Elite</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Salons -->
+            <section style="padding: 8rem 0;">
+                <div class="container">
+                    <div class="section-title-wrapper reveal-fade-up">
+                        <span class="section-subtitle">Curated Collection</span>
+                        <h2 class="text-gradient-gold">Featured Luxury Spaces</h2>
+                        <p class="section-desc">Handpicked salons delivering the finest styling, therapies, and concierge comfort.</p>
+                    </div>
+                    <div class="salon-grid reveal-fade-up" id="featured-salon-grid">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Luxury Services Catalog -->
+            <section class="services-section">
+                <div class="container">
+                    <div class="section-title-wrapper reveal-fade-up">
+                        <span class="section-subtitle">Exquisite Rituals</span>
+                        <h2 class="text-gradient-gold">Explore Signature Services</h2>
+                        <p class="section-desc">Unveil customized care packages crafted by Creative Directors and Master Therapists.</p>
+                    </div>
+                    
+                    <div class="services-grid reveal-fade-up">
+                        <div class="service-card glass" onclick="APP_STATE.filterParams.categories=['Hair']; navigateTo('listings')">
+                            <div class="service-icon-wrapper">
+                                <svg viewBox="0 0 24 24"><path d="M19.5,6C19.5,4.62 18.38,3.5 17,3.5C15.62,3.5 14.5,4.62 14.5,6C14.5,7.38 15.62,8.5 17,8.5C18.38,8.5 19.5,7.38 19.5,6M12,13A3,3 0 0,0 9,16A3,3 0 0,0 12,19A3,3 0 0,0 15,16A3,3 0 0,0 12,13M19,10.27C18.38,10.1 17.7,10 17,10C14.24,10 12,12.24 12,15C12,15.22 12.03,15.44 12.06,15.65C10.6,15.86 9.4,17.06 9.18,18.5H3V20H9.18C9.5,21.9 11.2,23.3 13.25,22.92C14.73,22.65 15.9,21.47 16.18,20H21V18.5H16.18C15.9,17.04 14.7,15.84 13.25,15.58C13.09,15.4 13,15.21 13,15C13,12.8 14.8,11 17,11C17.7,11 18.38,11.15 19,11.43V10.27Z"/></svg>
+                            </div>
+                            <h4 class="service-title">Hair Design</h4>
+                            <span class="service-count">3 Studios</span>
+                        </div>
+                        <div class="service-card glass" onclick="APP_STATE.filterParams.categories=['Spa']; navigateTo('listings')">
+                            <div class="service-icon-wrapper">
+                                <svg viewBox="0 0 24 24"><path d="M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M12,6A1.5,1.5 0 0,1 13.5,7.5A1.5,1.5 0 0,1 12,9A1.5,1.5 0 0,1 10.5,7.5A1.5,1.5 0 0,1 12,6M12,18A1.5,1.5 0 0,1 10.5,16.5A1.5,1.5 0 0,1 12,15A1.5,1.5 0 0,1 13.5,16.5A1.5,1.5 0 0,1 12,18M6,12.5A1.5,1.5 0 0,1 7.5,11A1.5,1.5 0 0,1 9,12.5A1.5,1.5 0 0,1 7.5,14A1.5,1.5 0 0,1 6,12.5M15,12.5A1.5,1.5 0 0,1 16.5,11A1.5,1.5 0 0,1 18,12.5A1.5,1.5 0 0,1 16.5,14A1.5,1.5 0 0,1 15,12.5Z"/></svg>
+                            </div>
+                            <h4 class="service-title">Luxury Spa</h4>
+                            <span class="service-count">3 Enclaves</span>
+                        </div>
+                        <div class="service-card glass" onclick="APP_STATE.filterParams.categories=['Skin']; navigateTo('listings')">
+                            <div class="service-icon-wrapper">
+                                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4M12,18C8.69,18 6,15.31 6,12C6,10.9 6.3,9.88 6.81,9L12,14.19L17.19,9C17.7,9.88 18,10.9 18,12C18,15.31 15.31,18 12,18Z"/></svg>
+                            </div>
+                            <h4 class="service-title">Skin Therapies</h4>
+                            <span class="service-count">2 Centers</span>
+                        </div>
+                        <div class="service-card glass" onclick="APP_STATE.filterParams.categories=['Nails']; navigateTo('listings')">
+                            <div class="service-icon-wrapper">
+                                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M9.5,7C10.33,7 11,7.67 11,8.5V11.5C11,11.78 10.78,12 10.5,12H8.5C8.22,12 8,11.78 8,11.5V8.5C8,7.67 8.67,7 9.5,7M14.5,7C15.33,7 16,7.67 16,8.5V11.5C16,11.78 15.78,12 15.5,12H13.5C13.22,12 13,11.78 13,11.5V8.5C13,7.67 13.67,7 14.5,7M9.5,14C10.33,14 11,14.67 11,15.5V18.5C11,18.78 10.78,19 10.5,19H8.5C8.22,19 8,18.78 8,18.5V15.5C8,14.67 8.67,14 9.5,14M14.5,14C15.33,14 16,14.67 16,15.5V18.5C16,18.78 15.78,19 15.5,19H13.5C13.22,19 13,18.78 13,18.5V15.5C13,14.67 13.67,14 14.5,14Z"/></svg>
+                            </div>
+                            <h4 class="service-title">Nail Artistry</h4>
+                            <span class="service-count">2 Suites</span>
+                        </div>
+                        <div class="service-card glass" onclick="APP_STATE.filterParams.categories=['Makeup']; navigateTo('listings')">
+                            <div class="service-icon-wrapper">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/></svg>
+                            </div>
+                            <h4 class="service-title">Cosmetics</h4>
+                            <span class="service-count">2 Suites</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why BEE -->
+            <section class="why-bee-section">
+                <div class="container">
+                    <div class="section-title-wrapper reveal-fade-up">
+                        <span class="section-subtitle">Elite Standards</span>
+                        <h2 class="text-gradient-gold">Why High Society Chooses Bee</h2>
+                        <p class="section-desc">Reimagining salon bookings with the high-end concierge experience you deserve.</p>
+                    </div>
+
+                    <div class="why-grid reveal-fade-up">
+                        <div class="why-card">
+                            <div class="why-number">01</div>
+                            <h4 class="why-title">100% Curated Luxury</h4>
+                            <p class="why-desc">We screen salons across 40 strict standards of hygiene, expert skill, and interior opulence. Only the top 5% are accepted.</p>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-number">02</div>
+                            <h4 class="why-title">Creative Directors Only</h4>
+                            <p class="why-desc">Bee guarantees booking access to top stylists and creative salon directors. No junior tiers or compromised styling.</p>
+                        </div>
+                        <div class="why-card">
+                            <div class="why-number">03</div>
+                            <h4 class="why-title">Concierge Scheduling</h4>
+                            <p class="why-desc">Instant seat guarantees. No lines, no double-bookings. Reschedule or cancel with single-tap concierge support.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BEE Elite VIP Membership Card Teaser -->
+            <section class="elite-section">
+                <div class="container elite-grid reveal-fade-up">
+                    <div class="elite-content">
+                        <span class="elite-badge">Bee Elite Membership</span>
+                        <h2 class="text-gradient-gold" style="margin-bottom: 1.5rem;">Join the Inner Circle of Beauty</h2>
+                        <p style="color: var(--color-text-muted); font-size:1.1rem;">Gain priority scheduling, complimentary champagne, VIP styling lounges, and private access to international directors visiting Bangalore.</p>
+                        
+                        <div class="elite-list">
+                            <div class="elite-list-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Priority Reservation & Zero Queue Seats</span>
+                            </div>
+                            <div class="elite-list-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>VIP Lounge Entrance & Complimentary Sips</span>
+                            </div>
+                            <div class="elite-list-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>15% Back in Bee Gold Reward Points</span>
+                            </div>
+                        </div>
+
+                        <a href="#elite" class="btn btn-primary">Discover Membership Plans</a>
+                    </div>
+
+                    <!-- 3D Metallic Card Preview -->
+                    <div class="elite-card-container">
+                        <div class="elite-vip-card" id="home-membership-card-tilt">
+                            <div class="card-reflection"></div>
+                            <div class="card-logo">
+                                <h4>Bee</h4>
+                                <div class="card-chip"></div>
+                            </div>
+                            <div class="card-number">Bee 8802 9140 Elite</div>
+                            <div class="card-footer">
+                                <div class="card-holder">
+                                    <label>Cardholder</label>
+                                    <span>DEV KARAN</span>
+                                </div>
+                                <div class="card-tier">BLACK EDITION</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <div class="container">
+                    <div class="section-title-wrapper reveal-fade-up">
+                        <span class="section-subtitle">Verified Reviews</span>
+                        <h2 class="text-gradient-gold">Loved by High Society</h2>
+                        <p class="section-desc">Real opinions from luxury enthusiasts, entrepreneurs, and lifestyle editors in Bangalore.</p>
+                    </div>
+
+                    <div class="testimonials-grid reveal-fade-up">
+                        <div class="testimonial-card glass">
+                            <p class="testimonial-quote">"The spa suite reservation at Ritz via Bee was magical. Handled with absolute class. Zero wait time, walked straight into my private gold facial lounge."</p>
+                            <div class="testimonial-author">
+                                <img class="author-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Client">
+                                <div class="author-info">
+                                    <h5>Kiran Mazumdar</h5>
+                                    <span>Lifestyle Editor, Luxe Bangalore</span>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card glass">
+                            <p class="testimonial-quote">"Rossano Ferretti's Method Cut is phenomenal. Booking through Bee Elite ensures I get Creative Director Marco directly without scheduling headaches."</p>
+                            <div class="testimonial-author">
+                                <img class="author-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Client">
+                                <div class="author-info">
+                                    <h5>Pooja Hegde</h5>
+                                    <span>Founder, Aura Ventures</span>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Mobile App Show -->
+            <section class="download-section">
+                <div class="container download-grid reveal-fade-up">
+                    <div>
+                        <span class="elite-badge" style="background:rgba(212,175,55,0.05);">Bee Mobile Concierge</span>
+                        <h2 class="text-gradient-gold" style="margin-bottom: 1.5rem;">Luxury Beauty in Your Pocket</h2>
+                        <p style="color: var(--color-text-muted); font-size:1.05rem;">Get notifications of luxury stylist availabilities, manage digital booking passes, and view personal grooming points metrics from our iOS and Android applications.</p>
+                        
+                        <div class="download-app-stores">
+                            <a href="#" class="store-badge" onclick="event.preventDefault(); showToast('Mobile download link coming soon!')">
+                                <svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.1,16.67C20.08,16.74 19.67,18.11 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+                                <div class="store-text">
+                                    <label>Download on the</label>
+                                    <span>App Store</span>
+                                </div>
+                            </a>
+                            <a href="#" class="store-badge" onclick="event.preventDefault(); showToast('Mobile download link coming soon!')">
+                                <svg viewBox="0 0 24 24"><path d="M3,5.27V18.73L16.55,12L3,5.27M17.87,11.33L19.5,12.16L17.87,13L15.3,12L17.87,11.33M3,3.15L20.26,11.72C20.65,11.9 20.65,12.1 20.26,12.28L3,20.85C2.61,21.04 2.39,20.9 2.39,20.5V3.5C2.39,3.1 2.61,2.96 3,3.15Z"/></svg>
+                                <div class="store-text">
+                                    <label>Get it on</label>
+                                    <span>Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="download-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-camera"></div>
+                            <div class="phone-screen" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80');"></div>
+                        </div>
+                        <div class="floating-app-badge glass">
+                            <i class="fas fa-calendar-alt text-gold" style="font-size:1.5rem;"></i>
+                            <div>
+                                <h5>Ritz Spa Reserved</h5>
+                                <span>Tomorrow at 11 AM</span>
+                            </div>
+                        </div>
+                        <div class="floating-app-badge second glass">
+                            <i class="fas fa-award text-gold" style="font-size:1.5rem;"></i>
+                            <div>
+                                <h5>Bee Gold Points</h5>
+                                <span>+1,250 Added</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==========================================
+           B. SALON LISTINGS VIEW
+           ========================================== -->
+        <div id="listings-page" class="view-pane container listings-container" style="display: none;">
+            <div class="listings-layout">
+                
+                <!-- Filter Sidebar -->
+                <aside class="filters-sidebar glass">
+                    <h3 class="text-gold" style="font-size:1.4rem; margin-bottom:1.8rem; text-align:center;">Filter Salons</h3>
+                    
+                    <!-- Search Input -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Neighborhood</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="loc-filter" value="Lavelle Road" onchange="handleFilterToggle('location', this.value, event)">
+                                <span>Lavelle Road</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="loc-filter" value="Koramangala" onchange="handleFilterToggle('location', this.value, event)">
+                                <span>Koramangala</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="loc-filter" value="Indiranagar" onchange="handleFilterToggle('location', this.value, event)">
+                                <span>Indiranagar</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="loc-filter" value="Sadashivanagar" onchange="handleFilterToggle('location', this.value, event)">
+                                <span>Sadashivanagar</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Category checkboxes -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Service Type</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="cat-filter" value="Hair" onchange="handleFilterToggle('category', this.value, event)">
+                                <span>Hair Design</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="cat-filter" value="Spa" onchange="handleFilterToggle('category', this.value, event)">
+                                <span>Luxury Spa</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="cat-filter" value="Skin" onchange="handleFilterToggle('category', this.value, event)">
+                                <span>Skincare Therapy</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="cat-filter" value="Nails" onchange="handleFilterToggle('category', this.value, event)">
+                                <span>Nail Studios</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="cat-filter" value="Makeup" onchange="handleFilterToggle('category', this.value, event)">
+                                <span>Cosmetic Artistry</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range Filters -->
+                    <div class="filter-section">
+                        <h4 class="filter-title">Price Range</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="price-filter" value="1" onchange="handleFilterToggle('price', this.value, event)">
+                                <span>Under ₹2,000</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="price-filter" value="2" onchange="handleFilterToggle('price', this.value, event)">
+                                <span>₹2,000 - ₹5,000</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="price-filter" value="3" onchange="handleFilterToggle('price', this.value, event)">
+                                <span>₹5,000 - ₹10,000</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="price-filter" value="4" onchange="handleFilterToggle('price', this.value, event)">
+                                <span>₹10,000+</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button onclick="resetFilters()" class="btn btn-secondary" style="width: 100%; font-size: 0.8rem; margin-top: 1rem;">Reset Filters</button>
+                </aside>
+
+                <!-- Grid column list -->
+                <section>
+                    <div class="listings-header">
+                        <span class="listings-count-text" id="listings-count">0 Salons Found</span>
+                        
+                        <div class="listings-sort">
+                            <select id="sort-select" onchange="handleSortChange(this.value)">
+                                <option value="recommended">Recommended</option>
+                                <option value="rating">Top Rated</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="salon-grid" id="listings-grid">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- ==========================================
+           C. SALON DETAILS VIEW
+           ========================================== -->
+        <div id="salon-details-page" class="view-pane salon-details-container" style="display: none;">
+            
+            <!-- Details Hero Cover -->
+            <div class="salon-details-hero">
+                <img id="detail-hero-img" class="salon-details-hero-img" src="" alt="Salon Cover">
+                <div class="salon-details-hero-overlay"></div>
+                <div class="salon-details-hero-content">
+                    <div class="container">
+                        <div class="details-badge-row">
+                            <span class="salon-badge" id="detail-badge" style="position:static;">ELITE PARTNER</span>
+                            <span class="salon-badge" style="position:static; background:rgba(26,18,11,0.6); border:1px solid var(--color-gold); color:var(--color-gold);"><i class="fas fa-shield-alt"></i> Bee Verified</span>
+                        </div>
+                        <div class="salon-details-title-row">
+                            <div>
+                                <h1 class="salon-details-name text-gradient-gold" id="detail-salon-name">Salon Name</h1>
+                                <p id="detail-salon-tagline" style="font-size:1.15rem; color:var(--color-text-muted); font-weight:300; margin-top:0.5rem;"></p>
+                            </div>
+                            <div style="text-align:right;">
+                                <div class="salon-card-rating" style="font-size:1.4rem;">
+                                    <i class="fas fa-star"></i>
+                                    <span id="detail-rating-score">4.9</span>
+                                </div>
+                                <span id="detail-rating-count" style="font-size:0.8rem; color:var(--color-muted);"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Details Content Area -->
+            <div class="container salon-details-main-grid">
+                
+                <!-- Tab systems columns -->
+                <div>
+                    <div class="details-tabs-nav">
+                        <button class="details-tab-btn active" data-tab="services" onclick="switchDetailsTab('services')">Menu & Pricing</button>
+                        <button class="details-tab-btn" data-tab="reviews" onclick="switchDetailsTab('reviews')">Guest Reviews</button>
+                        <button class="details-tab-btn" data-tab="gallery" onclick="switchDetailsTab('gallery')">Aesthetic Gallery</button>
+                    </div>
+
+                    <!-- Services Tab Pane -->
+                    <div id="detail-services-tab" class="tab-pane active">
+                        <div class="services-list-container" id="detail-services-list">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab Pane -->
+                    <div id="detail-reviews-tab" class="tab-pane">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <!-- Gallery Tab Pane -->
+                    <div id="detail-gallery-tab" class="tab-pane salon-gallery-grid">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <!-- Map Details Section -->
+                    <div style="margin-top: 4rem;">
+                        <h3 class="text-gold" style="margin-bottom: 1.5rem; font-size:1.5rem;">Salon Location</h3>
+                        <div class="map-mockup">
+                            <div class="map-placeholder" style="background-image: url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=1000&q=80');"></div>
+                            <div class="map-marker"></div>
+                            <div class="glass" style="position:absolute; bottom:1.5rem; left:1.5rem; padding:1rem; border-radius:8px; font-size:0.8rem; max-width:260px;">
+                                <h5 style="color:var(--color-gold); margin-bottom:4px;">Bangalore Center</h5>
+                                <p id="detail-salon-loc" style="color:var(--color-text-muted);"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Sidebar Cart Panel -->
+                <aside class="booking-summary-card glass">
+                    <h4 class="summary-title text-gold">Reservation Cart</h4>
+                    
+                    <div class="summary-items-list" id="summary-cart-items">
+                        <!-- Populated via JS -->
+                    </div>
+
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summary-subtotal">₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Concierge Booking Fee</span>
+                            <span id="summary-service-fee">₹0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Bill</span>
+                            <span id="summary-total">₹0</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="summary-checkout-btn" style="width: 100%;" onclick="launchBookingFlow()">
+                        Reserve Experience <span id="summary-cart-count">(0)</span>
+                    </button>
+                    <p style="text-align:center; font-size:0.7rem; color:var(--color-muted); margin-top:1rem;">
+                        VIP Black Edition members receive complimentary lounge entry.
+                    </p>
+                </aside>
+
+            </div>
+        </div>
+
+        <!-- ==========================================
+           D. BEE ELITE MEMBERSHIP PAGE
+           ========================================== -->
+        <div id="elite-page" class="view-pane container" style="display: none; padding-top: 120px; padding-bottom: 6rem;">
+            
+            <div class="section-title-wrapper reveal-fade-up">
+                <span class="section-subtitle">Exclusive Tiers</span>
+                <h1 class="text-gradient-gold">Bee Elite Privileges</h1>
+                <p class="section-desc">Unlock Bangalore's most premium beauty privileges, custom VIP treatments, and concierge seat mappings.</p>
+            </div>
+
+            <!-- Live Card Generator Mockup -->
+            <div class="glass reveal-fade-up" style="max-width: 900px; margin: 4rem auto; border-radius: var(--border-radius-lg); padding: 3rem; display:grid; grid-template-columns: 1.2fr 1fr; gap:3rem; align-items:center;">
+                <div>
+                    <h3 class="text-gold" style="margin-bottom:1rem; font-size:1.8rem;">Design Your Digital VIP Pass</h3>
+                    <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2rem;">Personalize your elite membership token in real-time. Feel the custom tilt shimmer as you hover over the physical card dimensions.</p>
+                    
+                    <div class="form-group" style="margin-bottom:1.5rem;">
+                        <label for="elite-card-name-input">Cardholder Full Name</label>
+                        <input type="text" id="elite-card-name-input" placeholder="e.g. DEV KARAN" maxlength="18">
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="showToast('Your custom card is linked to your dashboard!')">Apply for Elite Membership</button>
+                </div>
+                
+                <div class="elite-card-container">
+                    <!-- Interactive Shimmer tilt card -->
+                    <div class="elite-vip-card" id="elite-interactive-vip-card" style="transform-style: preserve-3d;">
+                        <div class="card-reflection"></div>
+                        <div class="card-logo">
+                            <h4>Bee</h4>
+                            <div class="card-chip"></div>
+                        </div>
+                        <div class="card-number">Bee 7702 4439 VIP</div>
+                        <div class="card-footer">
+                            <div class="card-holder">
+                                <label>Elite Member</label>
+                                <span id="elite-preview-card-holder">DEV KARAN</span>
+                            </div>
+                            <div class="card-tier">BLACK EDITION</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiered Plans Grid -->
+            <div class="elite-plans-grid reveal-fade-up" style="display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 4rem;">
+                <!-- Monthly Plan -->
+                <div class="plan-card glass" style="max-width: 380px; width: 100%; flex: 1 1 300px;">
+                    <div class="plan-header">
+                        <h3>Bee Elite Monthly</h3>
+                        <div class="plan-price">₹999<span> / month</span></div>
+                    </div>
+                    <p style="font-size:0.8rem; color:var(--color-muted); margin-bottom: 1.5rem;">Perfect for regular styling visits and concierge assistance.</p>
+                    <div class="plan-benefits">
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>10% cash back in Bee Gold Points</span></div>
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>Standard booking priority & queue skip</span></div>
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>Monthly complimentary skin consultation</span></div>
+                    </div>
+                    <button class="btn btn-secondary" style="width:100%;" onclick="handleSubscribe('Elite Monthly')">Subscribe Monthly</button>
+                </div>
+
+                <!-- Annual Plan -->
+                <div class="plan-card glass popular" style="max-width: 380px; width: 100%; flex: 1 1 300px;">
+                    <span class="plan-ribbon">Best Value</span>
+                    <div class="plan-header">
+                        <h3>Bee Elite Annual</h3>
+                        <div class="plan-price">₹9,999<span> / year</span></div>
+                    </div>
+                    <p style="font-size:0.8rem; color:var(--color-muted); margin-bottom: 1.5rem;">The ultimate grooming access and savings for high society.</p>
+                    <div class="plan-benefits">
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>15% cash back in Bee Gold Points</span></div>
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>24-hour priority concierge reservations</span></div>
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>Invite-only masterclasses & designer styling</span></div>
+                        <div class="plan-benefit-item"><i class="fas fa-check" style="color:var(--color-gold);"></i><span>Two complimentary signature styling blowdrys</span></div>
+                    </div>
+                    <button class="btn btn-primary" style="width:100%;" onclick="handleSubscribe('Elite Annual')">Subscribe Annual</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+           E. ABOUT US STORY PAGE
+           ========================================== -->
+        <div id="about-page" class="view-pane container" style="display: none; padding-top: 120px; padding-bottom: 6rem;">
+            <div class="about-hero reveal-fade-up">
+                <span class="section-subtitle">Our Mission</span>
+                <h1 class="text-gradient-gold" style="margin-bottom:1.5rem;">Redefining Indian Beauty Tech</h1>
+                <p class="section-desc" style="max-width:750px;">Bee represents a vision of effortless luxury, connecting discerning guests with elite styling craftsmen.</p>
+            </div>
+
+            <!-- Story segment -->
+            <section class="about-content-section">
+                <div class="about-story-grid reveal-fade-up">
+                    <div class="about-story-text">
+                        <h3 class="text-gold" style="font-size:1.8rem; margin-bottom:1.5rem;">The Startup Story</h3>
+                        <p style="color:var(--color-text-muted); font-size:1.05rem; margin-bottom:1.2rem;">Founded in Bangalore in 2025, Bee emerged from a simple realization: booking high-end salons remained fragmented, despite top salons charging premium rates. High-society guests encountered double bookings, waiting queues, and inconsistent services.</p>
+                        <p style="color:var(--color-text-muted); font-size:1.05rem;">We partnered with top luxury chains, hotels, and international hair directors to aggregate under a single unified platform. Driven by technology, styled by elegance.</p>
+                    </div>
+                    <div class="about-story-img">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Founders Space">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Creative Directors Board -->
+            <section style="margin-top:6rem;">
+                <div class="section-title-wrapper reveal-fade-up">
+                    <span class="section-subtitle">Master Artisans</span>
+                    <h2 class="text-gradient-gold">Bee Creative Board</h2>
+                    <p class="section-desc">MEET the global visionaries coordinating styles, safety, and training systems across all Bee partner salons.</p>
+                </div>
+
+                <div class="team-grid reveal-fade-up">
+                    <div class="team-card">
+                        <div class="team-member-img-frame">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Marco">
+                        </div>
+                        <h4 style="font-size:1.2rem; color:var(--color-gold);">Marco Rossini</h4>
+                        <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase; letter-spacing:0.05em;">Global Hair Director</span>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-member-img-frame">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="Amrita">
+                        </div>
+                        <h4 style="font-size:1.2rem; color:var(--color-gold);">Amrita Sen</h4>
+                        <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase; letter-spacing:0.05em;">Wellness Director</span>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-member-img-frame">
+                            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Elena">
+                        </div>
+                        <h4 style="font-size:1.2rem; color:var(--color-gold);">Elena Varga</h4>
+                        <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase; letter-spacing:0.05em;">Lead Styling Advisor</span>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-member-img-frame">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Vikram">
+                        </div>
+                        <h4 style="font-size:1.2rem; color:var(--color-gold);">Vikram Rathore</h4>
+                        <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase; letter-spacing:0.05em;">Grooming Advisor</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==========================================
+           F. USER DASHBOARD VIEW
+           ========================================== -->
+        <div id="dashboard-page" class="view-pane container dashboard-container" style="display: none;">
+            <div class="dashboard-layout">
+                
+                <!-- Sidebar Info Panel -->
+                <aside class="dashboard-sidebar glass">
+                    <img class="dashboard-user-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="User Avatar">
+                    <h4 id="dashboard-user-name" style="font-size:1.3rem;">Dev Karan</h4>
+                    <span class="elite-badge" style="margin-top:0.4rem; padding: 2px 8px; font-size:0.6rem;">Elite Member</span>
+                    <p style="font-size:0.75rem; color:var(--color-muted); margin-top:0.5rem;">Joined October 2025</p>
+                    
+                    <div class="dashboard-nav" id="dashboard-nav-links">
+                        <!-- Customer Links -->
+                        <button class="dashboard-nav-btn customer-link active" onclick="switchDashboardPane('overview', event)">
+                            <i class="fas fa-home"></i> Overview
+                        </button>
+                        <button class="dashboard-nav-btn customer-link" onclick="switchDashboardPane('preferences', event)">
+                            <i class="fas fa-user-cog"></i> Preferences Profile
+                        </button>
+
+                        <!-- Salon Owner Links -->
+                        <button class="dashboard-nav-btn owner-link" onclick="switchDashboardPane('owner-salon', event)" style="display: none;">
+                            <i class="fas fa-store"></i> My Salon
+                        </button>
+                        <button class="dashboard-nav-btn owner-link" onclick="switchDashboardPane('owner-bookings', event)" style="display: none;">
+                            <i class="fas fa-calendar-check"></i> Salon Bookings
+                        </button>
+
+                        <!-- Admin Links -->
+                        <button class="dashboard-nav-btn admin-link" onclick="switchDashboardPane('admin-approvals', event)" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Salon Approvals
+                        </button>
+                        <button class="dashboard-nav-btn admin-link" onclick="switchDashboardPane('admin-analytics', event)" style="display: none;">
+                            <i class="fas fa-chart-line"></i> Analytics & Users
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Content Area -->
+                <main class="dashboard-content-area">
+                    
+                    <!-- Overview Pane -->
+                    <div id="dashboard-pane-overview" class="dashboard-pane active">
+                        <div class="dashboard-overview-grid" style="margin-bottom:2.5rem;">
+                            <div class="dashboard-stat-card glass">
+                                <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase;">Membership Level</span>
+                                <h3 class="stat-value" style="font-size:1.6rem; margin-top:0.8rem; margin-bottom:0.2rem;">Elite VIP</h3>
+                                <span style="font-size:0.7rem; color:var(--color-gold); font-weight:700;">Black Edition</span>
+                            </div>
+                            <div class="dashboard-stat-card glass">
+                                <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase;">Gold Rewards</span>
+                                <h3 class="stat-value" id="dashboard-points-indicator">2,450</h3>
+                                <span style="font-size:0.7rem; color:var(--color-muted);">Equivalent to ₹2,450</span>
+                            </div>
+                            <div class="dashboard-stat-card glass">
+                                <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase;">Visits Checked</span>
+                                <h3 class="stat-value">12</h3>
+                                <span style="font-size:0.7rem; color:var(--color-muted);">1 visit from VIP Bronze tier</span>
+                            </div>
+                        </div>
+
+                        <!-- Next Appointment Reservation Pass -->
+                        <h3 class="text-gold" style="font-size:1.5rem; margin-bottom:1.5rem;">Active Digital Entrance Pass</h3>
+                        <div id="dashboard-next-booking" style="margin-bottom:3rem;">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+
+                        <!-- Saved Salons Grid -->
+                        <h3 class="text-gold" style="font-size:1.5rem; margin-bottom:1.5rem;">Saved Collections</h3>
+                        <div class="salon-grid" id="dashboard-saved-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-bottom:3rem;">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+
+                        <!-- Booking History lists -->
+                        <h3 class="text-gold" style="font-size:1.5rem; margin-bottom:1.5rem;">Reservation Logs</h3>
+                        <ul id="dashboard-bookings-list" style="margin-bottom:2rem;">
+                            <!-- Populated dynamically via JS -->
+                        </ul>
+                    </div>
+
+                    <!-- Preferences Profile Pane -->
+                    <div id="dashboard-pane-preferences" class="dashboard-pane">
+                        <h3 class="text-gold" style="font-size:1.6rem; margin-bottom:1rem;">Aesthetic Preferences Profile</h3>
+                        <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2.5rem;">Configure your skin & hair attributes. Our AI Stylist uses these variables to customize recommends and suggest appropriate salon menu offerings.</p>
+                        
+                        <form id="user-profile-form" class="preferences-form glass" style="padding:2rem; border-radius:var(--border-radius-lg);" onsubmit="handleUserProfileUpdate(event)">
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Full Name</label>
+                                <input type="text" id="profile-name" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Phone Number</label>
+                                <input type="text" id="profile-phone" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Email Address (Locked)</label>
+                                <input type="email" id="profile-email" disabled style="background: rgba(26,18,11,0.3); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: rgba(248, 244, 236, 0.4); cursor: not-allowed;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Change Password (Optional)</label>
+                                <input type="password" id="profile-password" placeholder="••••••••" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                            </div>
+                            
+                            <hr style="grid-column: 1/-1; border: none; border-top: 1px solid var(--color-glass-border); margin: 1rem 0;">
+                            
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Hair Attributes</label>
+                                <select id="profile-hair" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main); cursor: pointer;">
+                                    <option value="Dry & Frizzy">Dry & Frizzy</option>
+                                    <option value="Fine / Thinning">Fine / Thinning</option>
+                                    <option value="Curly / Textured">Curly / Textured</option>
+                                    <option value="Colored / Processed">Colored / Processed</option>
+                                    <option value="Normal Healthy">Normal Healthy</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Skin Goals</label>
+                                <select id="profile-skin" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main); cursor: pointer;">
+                                    <option value="Anti-Aging & Radiance">Anti-Aging & Radiance</option>
+                                    <option value="Acne Control & Clarifying">Acne Control & Clarifying</option>
+                                    <option value="Deep Hydration">Deep Hydration</option>
+                                    <option value="Pigmentation Corrective">Pigmentation Corrective</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Vibe Comfort Preference</label>
+                                <select id="profile-vibe" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main); cursor: pointer;">
+                                    <option value="Aesthetic Minimalist Lounge">Aesthetic Minimalist Lounge</option>
+                                    <option value="Classical Opulent Hotel Spa">Classical Opulent Hotel Spa</option>
+                                    <option value="Contemporary Styling Studio">Contemporary Styling Studio</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Communication Comfort</label>
+                                <select id="profile-comm" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main); cursor: pointer;">
+                                    <option value="Quiet Grooming (Minimalist Talk)">Quiet Grooming (Minimalist Talk)</option>
+                                    <option value="Standard Stylist Dialogue">Standard Stylist Dialogue</option>
+                                    <option value="Styling Consultation Heavy">Styling Consultation Heavy</option>
+                                </select>
+                            </div>
+                            <div style="grid-column: 1/-1; text-align:right; margin-top:1.5rem;">
+                                <button type="submit" class="btn btn-primary">Save Profile Settings</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Salon Owner: My Salon Pane -->
+                    <div id="dashboard-pane-owner-salon" class="dashboard-pane">
+                        <h3 class="text-gold" style="font-size:1.6rem; margin-bottom:1rem;">Manage Salon Details</h3>
+                        <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2.5rem;">Update your premium salon info, operating hours, pricing, and signature menu descriptions.</p>
+                        
+                        <div class="salon-owner-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                            <!-- Salon Details Form -->
+                            <form id="owner-salon-form" class="preferences-form glass" style="padding:2rem; border-radius:var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.2rem;" onsubmit="handleOwnerSalonUpdate(event)">
+                                <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                    <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Salon Name</label>
+                                    <input type="text" id="owner-salon-name" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                </div>
+                                <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                    <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Tagline</label>
+                                    <input type="text" id="owner-salon-tagline" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                </div>
+                                <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                    <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Neighborhood</label>
+                                    <select id="owner-salon-neighborhood" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                        <option value="Lavelle Road">Lavelle Road</option>
+                                        <option value="Koramangala">Koramangala</option>
+                                        <option value="Indiranagar">Indiranagar</option>
+                                        <option value="Sadashivanagar">Sadashivanagar</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                    <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Full Address</label>
+                                    <input type="text" id="owner-salon-address" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                </div>
+                                <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                    <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Opening Hours</label>
+                                    <input type="text" id="owner-salon-hours" placeholder="e.g. 10:00 AM - 08:30 PM" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Starting Price (₹)</label>
+                                        <input type="number" id="owner-salon-price-start" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                    </div>
+                                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Average Price (₹)</label>
+                                        <input type="number" id="owner-salon-price-avg" required style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                                    </div>
+                                </div>
+                                <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                    <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Salon Description</label>
+                                    <textarea id="owner-salon-desc" required rows="4" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main); font-family: var(--font-body); resize: none;"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Salon Profile</button>
+                            </form>
+
+                            <!-- Add Service Form & Services List -->
+                            <div class="owner-services-management glass" style="padding: 2rem; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 1.5rem;">
+                                <h4 class="text-gold" style="font-size: 1.25rem;">Services Catalogue</h4>
+                                <div id="owner-salon-services-list" style="max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.8rem; padding-right: 0.5rem;">
+                                    <!-- Populated dynamically via JS -->
+                                </div>
+
+                                <hr style="border: none; border-top: 1px solid var(--color-glass-border);">
+
+                                <h4 class="text-gold" style="font-size: 1.2rem;">Add Signature Service</h4>
+                                <form id="owner-add-service-form" onsubmit="handleOwnerAddService(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 4px; font-weight: 700;">Service Name</label>
+                                        <input type="text" id="add-service-name" required placeholder="e.g. Balayage Couture" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.6rem; border-radius: 6px; color: var(--color-text-main);">
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 0.8rem;">
+                                        <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                            <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 4px; font-weight: 700;">Category</label>
+                                            <select id="add-service-category" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.6rem; border-radius: 6px; color: var(--color-text-main);">
+                                                <option value="Hair">Hair</option>
+                                                <option value="Spa">Spa</option>
+                                                <option value="Skin">Skin</option>
+                                                <option value="Makeup">Makeup</option>
+                                                <option value="Grooming">Grooming</option>
+                                                <option value="Nails">Nails</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                            <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 4px; font-weight: 700;">Price (₹)</label>
+                                            <input type="number" id="add-service-price" required placeholder="e.g. 4500" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.6rem; border-radius: 6px; color: var(--color-text-main);">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 4px; font-weight: 700;">Duration</label>
+                                        <input type="text" id="add-service-duration" required placeholder="e.g. 60 mins" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.6rem; border-radius: 6px; color: var(--color-text-main);">
+                                    </div>
+                                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 4px; font-weight: 700;">Short Description</label>
+                                        <input type="text" id="add-service-desc" required placeholder="Describe the royal therapy..." style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.6rem; border-radius: 6px; color: var(--color-text-main);">
+                                    </div>
+                                    <button type="submit" class="btn btn-secondary" style="padding: 0.7rem 1.5rem;">Add to Menu</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salon Owner: Salon Bookings Pane -->
+                    <div id="dashboard-pane-owner-bookings" class="dashboard-pane">
+                        <h3 class="text-gold" style="font-size:1.6rem; margin-bottom:1rem;">Salon Reservation Logs</h3>
+                        <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2.5rem;">Track real-time reservations, confirm booking dates, or mark services as completed.</p>
+                        
+                        <div class="glass" style="border-radius: var(--border-radius-lg); padding: 2rem; overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid var(--color-glass-border); color: var(--color-gold);">
+                                        <th style="padding: 1rem;">Customer</th>
+                                        <th style="padding: 1rem;">Date & Time</th>
+                                        <th style="padding: 1rem;">Services Requested</th>
+                                        <th style="padding: 1rem;">Total Bill</th>
+                                        <th style="padding: 1rem;">Status</th>
+                                        <th style="padding: 1rem; text-align: right;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="owner-bookings-table-body">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Admin: Salon Approvals Pane -->
+                    <div id="dashboard-pane-admin-approvals" class="dashboard-pane">
+                        <h3 class="text-gold" style="font-size:1.6rem; margin-bottom:1rem;">Approve Salon Partner Sign-ups</h3>
+                        <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2.5rem;">Manage partner registrations. Approve or toggle premium salon badges to feature on the explorer map.</p>
+                        
+                        <div class="glass" style="border-radius: var(--border-radius-lg); padding: 2rem; overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid var(--color-glass-border); color: var(--color-gold);">
+                                        <th style="padding: 1rem;">Salon Name</th>
+                                        <th style="padding: 1rem;">Neighborhood</th>
+                                        <th style="padding: 1rem;">Owner Info</th>
+                                        <th style="padding: 1rem;">luxury Badge</th>
+                                        <th style="padding: 1rem;">Starting Price</th>
+                                        <th style="padding: 1rem;">Approval State</th>
+                                        <th style="padding: 1rem; text-align: right;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-salons-table-body">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Admin: Platform Analytics Pane -->
+                    <div id="dashboard-pane-admin-analytics" class="dashboard-pane">
+                        <h3 class="text-gold" style="font-size:1.6rem; margin-bottom:1rem;">Platform Administration Console</h3>
+                        <p style="color:var(--color-text-muted); font-size:0.9rem; margin-bottom:2.5rem;">Aggregate metrics across salons, monitor billing, and manage user roles.</p>
+                        
+                        <!-- Mini Analytics Cards -->
+                        <div class="dashboard-overview-grid" style="margin-bottom:2.5rem;" id="admin-analytics-grid">
+                            <div class="dashboard-stat-card glass">
+                                <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase;">Total Customers</span>
+                                <h3 class="stat-value" id="admin-total-users">0</h3>
+                                <span style="font-size:0.7rem; color:var(--color-muted);">Active registrations</span>
+                            </div>
+                            <div class="dashboard-stat-card glass">
+                                <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase;">Gross Revenue</span>
+                                <h3 class="stat-value" id="admin-revenue">₹0</h3>
+                                <span style="font-size:0.7rem; color:var(--color-muted);">Excluding concierge fees</span>
+                            </div>
+                            <div class="dashboard-stat-card glass">
+                                <span style="font-size:0.75rem; color:var(--color-muted); text-transform:uppercase;">Salon Partners</span>
+                                <h3 class="stat-value" id="admin-total-salons">0</h3>
+                                <span style="font-size:0.7rem; color:var(--color-muted);">Bangalore collections</span>
+                            </div>
+                        </div>
+
+                        <!-- Users and Roles Table -->
+                        <h4 class="text-gold" style="font-size: 1.3rem; margin-bottom: 1rem;">Registered Accounts & Roles</h4>
+                        <div class="glass" style="border-radius: var(--border-radius-lg); padding: 2rem; overflow-x: auto; margin-bottom: 3rem;">
+                            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid var(--color-glass-border); color: var(--color-gold);">
+                                        <th style="padding: 1rem;">Name</th>
+                                        <th style="padding: 1rem;">Email Address</th>
+                                        <th style="padding: 1rem;">Phone</th>
+                                        <th style="padding: 1rem;">System Role</th>
+                                        <th style="padding: 1rem;">Membership Plan</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-users-table-body">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </main>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ========================================================================
+       3. Footer
+       ======================================================================== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-logo-desc">
+                <a href="#home" class="brand-logo">
+                    <span class="logo-main" style="font-size: 2.2rem;">Bee</span>
+                    <span class="logo-sub" style="font-size:0.65rem; letter-spacing:0.35em;">Beauty, Elevated.</span>
+                </a>
+                <p class="footer-desc">Bangalore's finest beauty technology startup. Bridging high society and elite salon artistry.</p>
+                <div class="footer-socials">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#about" class="footer-link">Our Story</a></li>
+                    <li><a href="#elite" class="footer-link">Bee Elite</a></li>
+                    <li><a href="#listings" class="footer-link">Explore Salons</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link" onclick="event.preventDefault(); showToast('Concierge helpline: +91 80 4002 BEE')">Concierge Hotline</a></li>
+                    <li><a href="#" class="footer-link">VIP Services</a></li>
+                    <li><a href="#" class="footer-link">Booking Policies</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Inner Circle Newsletter</h4>
+                <div class="footer-newsletter">
+                    <p style="font-size:0.8rem; color:var(--color-text-muted);">Receive exclusive invites to visiting international stylist workshops in Indiranagar & Lavelle Road.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; showToast('Subscribed to the Inner Circle newsletter!')">
+                        <input type="email" placeholder="Your premium email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container footer-bottom">
+            <span>&copy; 2026 Bee Inc. Beauty, Elevated. All rights reserved.</span>
+            <div class="footer-legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Concierge</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================
+       4. Overlays & Drawer Modules
+       ======================================================================== -->
+    
+    <!-- AI-Powered Beauty Advisor (Floating + Drawer Quiz) -->
+    <div class="ai-stylist-float" onclick="toggleAIDrawer()">
+        <i class="fas fa-magic"></i>
+    </div>
+
+    <aside id="ai-assistant-drawer" class="ai-assistant-drawer glass">
+        <div class="ai-drawer-header">
+            <div>
+                <h4 class="text-gold" style="font-size:1.15rem; margin-bottom:2px;"><i class="fas fa-sparkles"></i> AI Beauty Stylist</h4>
+                <span style="font-size:0.65rem; color:var(--color-muted); text-transform:uppercase;">Personalized Salon Matches</span>
+            </div>
+            <button class="ai-close-btn" onclick="toggleAIDrawer()"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="ai-drawer-body">
+            <!-- STEP 1: Skin Goal -->
+            <div id="ai-quiz-step-1" class="ai-quiz-step active">
+                <h4 style="font-size:1.1rem; line-height:1.3;">What is your primary beauty goal today?</h4>
+                <div class="ai-options-list">
+                    <button class="ai-option-btn" onclick="answerAIQuestion('goal', 'spa-relax')">Deep Muscular Relaxation & Massage</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('goal', 'hair-color')">Creative Hair Coloring & Highlights</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('goal', 'skincare-glow')">Advanced Clinical Skincare & Facial</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Neighborhood -->
+            <div id="ai-quiz-step-2" class="ai-quiz-step">
+                <h4 style="font-size:1.1rem; line-height:1.3;">Which Bangalore location is most convenient?</h4>
+                <div class="ai-options-list">
+                    <button class="ai-option-btn" onclick="answerAIQuestion('neighborhood', 'Lavelle Road')">Lavelle Road / Vittal Mallya Road</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('neighborhood', 'Indiranagar')">Indiranagar Area</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('neighborhood', 'Koramangala')">Koramangala</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('neighborhood', 'any')">Show me the absolute best anywhere</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Vibe -->
+            <div id="ai-quiz-step-3" class="ai-quiz-step">
+                <h4 style="font-size:1.1rem; line-height:1.3;">What interior environment do you prefer?</h4>
+                <div class="ai-options-list">
+                    <button class="ai-option-btn" onclick="answerAIQuestion('vibe', 'classic')">Traditional & Opulent Palace Decor</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('vibe', 'modern')">Chic European Minimalist Design</button>
+                    <button class="ai-option-btn" onclick="answerAIQuestion('vibe', 'boutique')">Intimate & Botanical Sanctuary</button>
+                </div>
+            </div>
+
+            <!-- STEP 4: Results -->
+            <div id="ai-quiz-step-4" class="ai-quiz-step">
+                <h4 class="text-gold" style="font-size:1.15rem; margin-bottom:1.5rem;"><i class="fas fa-sparkles"></i> Stylist Recommendations</h4>
+                <div id="ai-recommendations-list" class="ai-recom-results">
+                    <!-- Populated dynamically via JS -->
+                </div>
+                <button onclick="toggleAIDrawer()" class="btn btn-secondary" style="width:100%; margin-top:2rem;">Close Advisor</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Global Multi-Step Booking Modal Frame -->
+    <div id="global-booking-modal" class="booking-modal">
+        <div class="booking-modal-content">
+            <div class="booking-modal-header">
+                <div>
+                    <h3 class="text-gold" style="margin-bottom:0.3rem;">Bespoke Reservation</h3>
+                    <p style="font-size:0.75rem; color:var(--color-text-muted); margin:0;">Complete your premium appointment booking details.</p>
+                </div>
+                <button class="booking-close" onclick="closeBookingFlow()"><i class="fas fa-times"></i></button>
+            </div>
+
+            <!-- Stepper Progress Tracker -->
+            <div class="booking-stepper">
+                <div class="step-indicator active">
+                    <div class="step-dot">1</div>
+                    <div class="step-label">Overview</div>
+                </div>
+                <div class="step-indicator">
+                    <div class="step-dot">2</div>
+                    <div class="step-label">Stylist</div>
+                </div>
+                <div class="step-indicator">
+                    <div class="step-dot">3</div>
+                    <div class="step-label">DateTime</div>
+                </div>
+                <div class="step-indicator">
+                    <div class="step-dot">4</div>
+                    <div class="step-label">Checkout</div>
+                </div>
+            </div>
+
+            <!-- Scrollable Content Panes -->
+            <div class="booking-modal-body">
+                <!-- STEP 1 -->
+                <div id="booking-step-1" class="booking-step-pane active">
+                    <h4 style="margin-bottom: 1.5rem;">Verify Selected Services</h4>
+                    <div id="step1-review-list" class="booking-reviews-scroller" style="max-height: 250px; overflow-y:auto; margin-bottom: 2rem;">
+                        <!-- Populate dynamically -->
+                    </div>
+                    <div class="glass" style="padding: 1.5rem; border-radius: var(--border-radius-lg);">
+                        <div style="display:flex; justify-content:space-between; margin-bottom: 0.6rem; font-size: 0.9rem;">
+                            <span>Subtotal</span>
+                            <span id="step1-subtotal">₹0</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom: 0.6rem; font-size: 0.9rem;">
+                            <span>Bee Concierge Fee</span>
+                            <span>₹250</span>
+                        </div>
+                        <hr style="border:none; border-top: 1px solid var(--color-glass-border); margin: 0.8rem 0;">
+                        <div style="display:flex; justify-content:space-between; font-size: 1.15rem; font-weight:700; color:var(--color-gold);">
+                            <span>Total Bill</span>
+                            <span id="step1-total">₹0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div id="booking-step-2" class="booking-step-pane">
+                    <h4 style="margin-bottom: 0.5rem;">Select Your Stylist</h4>
+                    <p style="font-size:0.8rem; color:var(--color-muted); margin-bottom:2rem;">Choose from our network of award-winning global fashion directors.</p>
+                    <div id="booking-stylists-grid" class="stylist-grid">
+                        <!-- Populate dynamically -->
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div id="booking-step-3" class="booking-step-pane">
+                    <h4 style="margin-bottom: 1.5rem;">Schedule Date & Time</h4>
+                    <div class="calendar-widget">
+                        <div>
+                            <div class="calendar-header-label">Preferred Date</div>
+                            <div id="calendar-days-container" class="calendar-days-grid">
+                                <!-- Days items populate dynamically -->
+                            </div>
+                        </div>
+                        <div>
+                            <div class="calendar-header-label">Available Slots</div>
+                            <div id="calendar-slots-container" class="slots-grid">
+                                <!-- Slots populate dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div id="booking-step-4" class="booking-step-pane">
+                    <div class="checkout-layout">
+                        <!-- Card visual side -->
+                        <div class="credit-card-frame">
+                            <div class="credit-card-preview" id="cc-card-model">
+                                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                                    <div style="font-family:var(--font-heading); font-size:1.5rem; letter-spacing:0.05em; color:var(--color-gold);">Bee</div>
+                                    <div class="card-chip" style="width:40px; height:28px;"></div>
+                                </div>
+                                <div class="card-number" id="cc-preview-number" style="font-size:1rem; margin-top:2rem;">•••• •••• •••• ••••</div>
+                                <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                                    <div class="card-holder">
+                                        <label>Cardholder</label>
+                                        <span id="cc-preview-name" style="font-size:0.75rem;">YOUR NAME</span>
+                                    </div>
+                                    <div class="card-tier" style="font-size:0.6rem; padding: 1px 6px;">PLATINUM</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Form inputs side -->
+                        <div class="checkout-form">
+                            <div class="form-group">
+                                <label for="card-number-input">Card Number</label>
+                                <input type="text" id="card-number-input" placeholder="4111 2222 3333 4444" maxlength="19">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-holder-name-input">Cardholder Name</label>
+                                <input type="text" id="card-holder-name-input" placeholder="e.g. Karan Sharma">
+                            </div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+                                <div class="form-group">
+                                    <label>Expiry Date</label>
+                                    <input type="text" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label>CVV</label>
+                                    <input type="password" placeholder="•••" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass" style="margin-top: 2rem; padding:1.2rem; border-radius: var(--border-radius-md);">
+                        <h5 style="color:var(--color-gold); margin-bottom:0.5rem; font-size:0.85rem;">Booking Confirmation</h5>
+                        <ul id="checkout-services-summary" style="font-size:0.8rem; padding-left:1rem; list-style-type:disc; color:var(--color-text-muted);">
+                            <!-- List elements -->
+                        </ul>
+                        <div style="font-size:0.8rem; color:var(--color-text-muted); margin-top:0.6rem;">
+                            <strong>Stylist:</strong> <span id="checkout-stylist"></span> | 
+                            <strong>Schedule:</strong> <span id="checkout-date-time"></span>
+                        </div>
+                        <div style="margin-top:0.8rem; display:flex; justify-content:space-between; font-size:1.05rem; font-weight:700;">
+                            <span>Total Charged</span>
+                            <span id="checkout-total-bill" style="color:var(--color-gold);">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-modal-footer">
+                <button id="booking-prev-btn" class="btn btn-secondary" onclick="handleBookingPrev()">Back</button>
+                <button id="booking-next-btn" class="btn btn-primary" onclick="handleBookingNext()">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Auth Modal Frame -->
+    <div id="auth-modal" class="booking-modal">
+        <div class="booking-modal-content" style="max-width: 450px;">
+            <div class="booking-modal-header">
+                <div>
+                    <h3 class="text-gold" id="auth-modal-title" style="margin-bottom:0.3rem;">Sign In</h3>
+                    <p style="font-size:0.75rem; color:var(--color-text-muted); margin:0;" id="auth-modal-subtitle">Access your luxury beauty profile.</p>
+                </div>
+                <button class="booking-close" onclick="closeAuthModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="booking-modal-body" style="padding: 2rem;">
+                <!-- Login Form -->
+                <form id="login-form" onsubmit="handleLoginSubmit(event)" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Email Address</label>
+                        <input type="email" id="login-email" required placeholder="customer@bee-luxury.com" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Password</label>
+                        <input type="password" id="login-password" required placeholder="••••••••" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;">Sign In</button>
+                    <p style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 1rem;">
+                        Don't have an account? <a href="#" onclick="toggleAuthMode('register', event)" style="color: var(--color-gold); font-weight: 600;">Register Here</a>
+                    </p>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" onsubmit="handleRegisterSubmit(event)" style="display: none; flex-direction: column; gap: 1.2rem;">
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Full Name</label>
+                        <input type="text" id="register-name" required placeholder="Aditi Sharma" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Email Address</label>
+                        <input type="email" id="register-email" required placeholder="customer@bee-luxury.com" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Phone Number</label>
+                        <input type="text" id="register-phone" required placeholder="+91 99887 76655" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Password</label>
+                        <input type="password" id="register-password" required placeholder="••••••••" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main);">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; text-align: left;">
+                        <label style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold); margin-bottom: 6px; font-weight: 700;">Register As</label>
+                        <select id="register-role" style="background: rgba(26,18,11,0.5); border: 1px solid var(--color-glass-border); padding: 0.8rem; border-radius: 6px; color: var(--color-text-main); cursor: pointer;">
+                            <option value="Customer" style="background: var(--color-bg-espresso); color: var(--color-text-main);">Customer</option>
+                            <option value="Salon Owner" style="background: var(--color-bg-espresso); color: var(--color-text-main);">Salon Owner</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;">Register</button>
+                    <p style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 1rem;">
+                        Already have an account? <a href="#" onclick="toggleAuthMode('login', event)" style="color: var(--color-gold); font-weight: 600;">Sign In Here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core App Logic Script -->
+    <script src="app.js"></script>
+    <script>
+        // Responsive Mobile Toggle script
+        function toggleMobileMenu() {
+            const nav = document.querySelector(".nav-links");
+            const toggle = document.querySelector(".mobile-toggle");
+            if(nav.style.display === "flex") {
+                nav.style.display = "none";
+                toggle.style.transform = "rotate(0)";
+            } else {
+                nav.style.display = "flex";
+                nav.style.flexDirection = "column";
+                nav.style.position = "absolute";
+                nav.style.top = "80px";
+                nav.style.left = "0";
+                nav.style.width = "100%";
+                nav.style.background = "var(--color-bg-dark)";
+                nav.style.borderBottom = "1px solid var(--color-glass-border)";
+                nav.style.padding = "2rem";
+                nav.style.zIndex = "999";
+                toggle.style.transform = "rotate(90deg)";
+            }
+        }
+    </script>
+</body>
+</html>
