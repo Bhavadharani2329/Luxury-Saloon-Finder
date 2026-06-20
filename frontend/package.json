@@ -1,0 +1,12 @@
+{
+  "name": "bee-luxury-platform-frontend",
+  "version": "1.0.0",
+  "description": "Bee - Beauty, Elevated. Frontend",
+  "private": true,
+  "scripts": {
+    "install": "npm install"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.6.1"
+  }
+}

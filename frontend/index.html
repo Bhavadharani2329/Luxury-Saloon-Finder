@@ -1503,6 +1503,12 @@
 
     <!-- Core App Logic Script -->
     <script src="app.js"></script>
+    
+    <!-- Vercel Web Analytics -->
+    <script type="module">
+        import { inject } from './node_modules/@vercel/analytics/dist/index.mjs';
+        inject();
+    </script>
     <script>
         // Responsive Mobile Toggle script
         function toggleMobileMenu() {
